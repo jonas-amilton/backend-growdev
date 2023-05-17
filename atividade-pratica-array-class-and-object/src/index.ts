@@ -93,28 +93,28 @@ const atv6 = () => {
     aluno.setNota(nota);
   });
 
-  const aprovados = alunos.filter((aluno) => aluno.Status === "Aprovado");
-  const reprovados = alunos.filter((aluno) => aluno.Status === "Reprovado");
+  const aprovados = alunos.filter((aluno) => aluno.status === "Aprovado");
+  const reprovados = alunos.filter((aluno) => aluno.status === "Reprovado");
   const media =
-    alunos.reduce((total, aluno) => total + aluno.Nota, 0) / alunos.length;
+    alunos.reduce((total, aluno) => total + aluno.nota, 0) / alunos.length;
   const melhorAluno = alunos.reduce(
-    (melhor, aluno) => (aluno.Nota > melhor.Nota ? aluno : melhor),
+    (melhor, aluno) => (aluno.nota > melhor.nota ? aluno : melhor),
     alunos[0]
   );
   const piorAluno = alunos.reduce(
-    (pior, aluno) => (aluno.Nota < pior.Nota ? aluno : pior),
+    (pior, aluno) => (aluno.nota < pior.nota ? aluno : pior),
     alunos[0]
   );
 
   console.log(
-    `Alunos aprovados: ${aprovados.map((aluno) => aluno.Nome).join(", ")}`
+    `Alunos aprovados: ${aprovados.map((aluno) => aluno.nome).join(", ")}`
   );
   console.log(
-    `Alunos reprovados: ${reprovados.map((aluno) => aluno.Nome).join(", ")}`
+    `Alunos reprovados: ${reprovados.map((aluno) => aluno.nome).join(", ")}`
   );
   console.log(`Média das notas: ${media.toFixed(2)}`);
-  console.log(`Melhor aluno: ${melhorAluno.Nome} (nota ${melhorAluno.Nota})`);
-  console.log(`Pior aluno: ${piorAluno.Nome} (nota ${piorAluno.Nota})`);
+  console.log(`Melhor aluno: ${melhorAluno.nome} (nota ${melhorAluno.nota})`);
+  console.log(`Pior aluno: ${piorAluno.nome} (nota ${piorAluno.nota})`);
 };
 
 atv6();

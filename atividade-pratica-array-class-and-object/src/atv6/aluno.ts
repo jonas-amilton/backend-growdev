@@ -1,18 +1,18 @@
 export class Aluno {
-  Nome: string;
-  Idade: number;
-  Nota: number;
-  Status: string;
+  nome: string;
+  idade: number;
+  nota: number;
+  status: string;
 
   constructor(nome: string, idade: number) {
-    this.Nome = nome;
-    this.Idade = idade;
-    this.Nota = 0;
-    this.Status = "Em andamento";
+    this.nome = nome;
+    this.idade = idade;
+    this.nota = 0;
+    this.status = "Em andamento";
   }
 
   setNota(nota: number) {
-    this.Nota = nota;
-    this.Status = nota >= 6 ? "Aprovado" : "Reprovado";
+    this.nota = nota;
+    this.status = nota >= 6 ? "Aprovado" : "Reprovado";
   }
 }
